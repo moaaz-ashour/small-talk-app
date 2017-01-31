@@ -1,5 +1,5 @@
 # Small Talk app
-a Hacker News/ Reddit-like web app which allows for registration/ login through Facebook, commenting, liking and replying.
+A Hacker News/ Reddit-like web app which allows for registration/ login through Facebook, commenting, liking and replying.
 
 ##Features
 * Only users who are logged in may post links or comment so there must be a mechanism for users to register and log in.
