@@ -1,0 +1,23 @@
+<div ng-show="!logged">
+    <div ng-include src="'/views/navbar-login.html'"></div>
+</div>
+
+<div ng-show="logged">
+    <div ng-include src="'/views/navbar-user.html'"></div>
+</div>
+
+<div class="container-fluid bgcolor">
+    <div id="post-box" ng-if="posts" ng-repeat="posts in posts" class="col-md-12 col-xs-12">
+        <ul id="list">
+        <div class='panel panel-default'>
+            <li class="panel-body"><a href={{posts.url}}><h3><img src={{posts.imageurl}} height="70px"/>  {{posts.title}}</h3> </a></li>
+            <div class="panel-footer clearfix">
+
+                <li class="tagline"> <span class="score" id="{{posts.id}}_score"> Post #{{posts.id}}</span> by <a ng-click='usernameGet(posts.username)'>{{posts.username}}</a>
+            about <span class="label label-primary">{{posts.created_at}}</span> <span class="comments_number"><a href="/post={{posts.id}}" ng-click="getPostInfo({posts})"> <span class="badge">{{posts.counter || 0}} </span> comments </a></span><span ng-if='logged' ng-show='!posts.favorite' class='add=to-fav'><a ng-click='addToFav(posts.id)'> Add to Favorites</a></span></div></div>
+        </ul>
+    </div>
+    <div class="col-xs-12 text-right">
+        <button type="button" class="btn btn-primary" ng-click="morePage()">Show more posts</button>
+    </div>
+</div>

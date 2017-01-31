@@ -1,0 +1,37 @@
+{
+  "name": "imageboard",
+  "version": "1.0.0",
+  "description": "Imageboard on backbone",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spicedacademy/paprika-imageboard.git"
+  },
+  "author": "Guilherme Gomes de Lucas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spicedacademy/paprika-imageboard/issues"
+  },
+  "homepage": "https://github.com/spicedacademy/paprika-imageboard#readme",
+  "dependencies": {
+    "basic-auth": "^1.1.0",
+    "bcrypt": "^1.0.2",
+    "cheerio": "^0.22.0",
+    "body-parser": "^1.15.2",
+    "connect-redis": "^3.1.0",
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "^2.0.0-alpha.2",
+    "csurf": "^1.9.0",
+    "express": "^4.14.0",
+    "express-session": "^1.14.1",
+    "multer": "^1.2.0",
+    "redis": "^2.6.2",
+    "request": "^2.79.0",
+    "spiced-pg": "github:spicedacademy/spiced-pg"
+  }
+}

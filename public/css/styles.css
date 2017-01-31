@@ -1,0 +1,74 @@
+* {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+   vertical-align: top;
+   text-decoration: none;
+}
+
+::-webkit-scrollbar {
+   display: none;
+}
+
+.main-container {
+   width: 1100px;
+   margin: 20px auto;
+}
+
+.register-container {
+   width: 550px;
+   float: left;
+}
+
+.login-container {
+   width: 550px;
+   float: left;
+}
+
+.active{
+   font-size: 20px;
+}
+
+
+input.ng-invalid.ng-touched {
+   border: 5px solid red;
+   border-width: thin;
+}
+
+button[disabled="disabled"]{
+   opacity: 0.5;
+   cursor: not-allowed !important;
+   color: red
+}
+
+
+.divider {
+   height: 1px;
+   width:100%;
+   display:block;
+   margin: 9px 0;
+   overflow: hidden;
+   background-color: rgb(159, 159, 159);
+}
+.black {
+   color: black;
+}
+
+.col-centered {
+   display:inline-block;
+   float:none;
+   text-align:left;
+   margin-right:-4px;
+}
+
+.label {
+   margin: 0px 5px;
+}
+
+.btn {
+   margin: 10px 0px;
+}
+
+.white-text {
+   color: white;
+}

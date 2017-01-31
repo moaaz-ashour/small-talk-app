@@ -1,0 +1,59 @@
+   <div ng-show="!logged">
+       <div ng-include src="'/views/navbar-login.html'"></div>
+   </div>
+   <div ng-show="logged">
+       <div ng-include src="'/views/navbar-user.html'"></div>
+   </div>
+   <div class="container-fluid bgcolor">
+       <div class="col-xs-1 col-md-3"></div>
+       <div id="submit-box" ng-controller='SubmitCtrl' class="col-xs-10 col-md-6 centered">
+           <form name="editInfo" novalidate>
+               <div class='panel panel-default'>
+                   <!-- start of user input -->
+                   <div class="panel-body opacity">
+                       <label for="usr">Username:</label>
+                       <input id="title-submit" name="username" class="form-control" ng-model='username' ng-change='userCheckingNewUsername(username)' placeholder="{{!username ? 'Your Username': ':)'}}" ng-required="true" />
+                       <div ng-show="editInfo.username.$touched && editInfo.username.$invalid">
+                           <small style="color: red"><strong>Username field cannot be empty!<strong></small>
+                       </div>
+                       <button class="btn btn-primary" ng-if="showUsernameCheckButton && editInfo.username.$valid" ng-click="attemptToUpdateUsername(username)">Check</button>
+                       <div class="alert alert-success" ng-if="updateUsernameSuccess">Username is available <i class="fa fa-check" aria-hidden="true"></i></div>
+                       <div class="alert alert-danger" ng-if="updateUsernameFailed">Username is taken <i class="fa fa-times" aria-hidden="true"></i></div>
+                   </div>
+                   <!-- End of user input -->
+
+                   <!-- start of email input -->
+                   <div class="panel-body">
+                       <label for="pwd">Email:</label>
+                       <input id="url-submit" type="email" name="email" class="form-control" ng-model='email' ng-change='userCheckingNewEmail(email)' placeholder="{{!email ? 'abc@example.com': ':)'}}" ng-required="true" />
+                       <div ng-show="editInfo.email.$touched && editInfo.email.$invalid">
+                           <small style="color: red"><strong>Email is not valid!<strong></small>
+                       </div>
+                       <button class="btn btn-primary" ng-if="showEmailCheckButton && editInfo.email.$valid" ng-click="attemptToUpdateEmail(email)">Check</button>
+                       <div class="alert alert-success" ng-if="updateEmailSuccess">Email is available. <i class="fa fa-check" aria-hidden="true"></i></div>
+                       <div class="alert alert-danger" ng-if="updateEmailFailed">Email is taken. <i class="fa fa-times" aria-hidden="true"></i></div>
+                   </div>
+                   <!-- End of email input -->
+
+                   <!-- start of password input -->
+                   <div class="panel-body">
+                       <label for="pwd">Password:</label>
+                       <input id="url-submit" type="password" class="form-control" ng-model='password' placeholder="{{!password ? 'Type a new password.': ':)'}}" />
+                   </div>
+                   <!-- End of password input -->
+
+                   <!-- start of about text area -->
+                   <div class='panel-footer clearfix'>
+                       About:<br>
+                       <textarea id="text-submit" name="about" class="form-control" ng-model='about' placeholder="{{'Some information about you.'}}">{{about}}</textarea><br>
+                   </div>
+                   <!-- end of about text area -->
+
+                   <!-- UPDATE BUTTON -->
+                   <button class="btn btn-primary" ng-click='updateProfile(username, email, about, password)' id="post-submit" class="btn btn-primary" ng-disabled="editInfo.$invalid">Update</button>
+                   <!-- UPDATE BUTTON -->
+               </div>
+           </form>
+       </div>
+       <div class="col-xs-1 col-md-3"></div>
+   </div>

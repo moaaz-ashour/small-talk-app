@@ -1,0 +1,60 @@
+<div class="main-container">
+   <form name="registerForm" novalidate>
+      <div class="register-container">
+         <div class="register-header">
+            <h1>Register</h1>
+         </div>
+         <div>
+            <input id='registerUsername' name='registrationUsername' type="text" placeholder="Your Name" ng-model="register.registrationUsername" ng-required="true" />
+            <div ng-show="registerForm.registrationUsername.$touched && registerForm.registrationUsername.$invalid">
+               <small style="color: red">Please enter a valid name!</small>
+            </div>
+         </div>
+         <div>
+            <input id='registerEmail' name='registrationEmail' type="email" placeholder="abc.example.com" ng-model="register.registrationEmail" ng-required="true" />
+            <div ng-show="registerForm.registrationEmail.$touched && registerForm.registrationEmail.$invalid">
+               <small style="color: red">Please enter a valid email!</small>
+            </div>
+         </div>
+         <div>
+            <input id='registerPassword' name='registrationPassword' type="password" placeholder="New Password" ng-model="register.registrationPassword" ng-required="true" />
+            <div ng-show="registerForm.registrationPassword.$touched && registerForm.registrationPassword.$invalid">
+               <small style="color: red">Please enter a password!</small>
+            </div>
+         </div>
+         <div>
+            <input id='confirmPassword' name='confirmedPassword' type="password" placeholder="Re-enter Password" ng-model="register.confirmedPassword" ng-required="true" />
+            <div ng-show="registerForm.confirmedPassword.$touched && registerForm.confirmedPassword.$invalid">
+               <small style="color: red">Please confirm your password!</small>
+            </div>
+         </div>
+         <button ng-disabled="registerForm.$invalid" ng-click="getRegistrationData()">Register</button>
+         <div ng-if="registerInfoRequired">Please make sure to provide all information required before submitting!</div>
+         <div ng-if="passwordsDoNotMatch">Passwords do not match!</div>
+         <div ng-model="errEmailOrPassExists">{{errEmailOrPassExists}}</div>
+      </div>
+   </form>
+
+
+      <form name="loginForm" novalidate>
+         <div class="login-container">
+            <div class="login-header">
+               <h1>Login</h1>
+            </div>
+            <div>
+               <input id='loginUsername' name='username' type="text" placeholder="Your Name" ng-model="login.loginUsername" ng-required="true" />
+               <div ng-show="loginForm.username.$touched && loginForm.username.$invalid">
+                  <small style="color: red">Please enter your name!</small>
+               </div>
+            </div>
+            <div>
+               <input id='loginPassword' name='password' type="password" placeholder="Your Password" ng-model="login.loginPassword" ng-required="true" />
+               <div ng-show="loginForm.password.$touched && loginForm.password.$invalid">
+                  <small style="color: red">Please enter your password!</small>
+               </div>
+            </div>
+            <div ng-if="loginInfoRequired">Please make sure to provide all information required before submitting!</div>
+            <button ng-disabled="loginForm.$invalid" ng-click="getLoginData()">Login</button>
+            <div ng-model="incorrectLoginCredintials">{{incorrectLoginCredintials}}</div>
+         </div>
+      </form>

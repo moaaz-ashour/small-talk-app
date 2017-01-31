@@ -1,0 +1,56 @@
+<script src="https://apis.google.com/js/platform.js" defer></script>
+<nav class="navbar navbar-default navbar-inverse" role="navigation" ng-controller="LoginCtrl">
+   <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+         <ul class="nav navbar-nav">
+            <li class="active"><a href=#><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+            <li ng-class="{active: activetab == '/'}"><a href="/home">     SmallTalk app</a></li>
+         </ul>
+         <ul class="nav navbar-nav navbar-right">
+            <li>
+               <p class="navbar-text">Already have an account?</p>
+            </li>
+            <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+               <ul id="login-dp" class="dropdown-menu">
+                  <li>
+                     <div class="row">
+                        <div class="col-md-12">
+                           Login via
+                           <div class="social-buttons">
+                              <button type="button" class="btn btn-fb" ng-click="facebookLogin()"><i class="fa fa-facebook left"></i> Facebook</button>
+                           </div>
+                           or
+                           <form class="form" role="form" accept-charset="UTF-8" id="login-nav">
+                              <div class="form-group">
+                                 <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                                 <input type="username" class="form-control" id="exampleInputEmail2" placeholder="Username" ng-model="loginUsername" required />
+                                 <div ng-show="loginForm.username.$touched && loginForm.username.$invalid">
+                                    <small style="color: red">Please enter your name!</small>
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                 <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" ng-model="loginPassword" required /s>
+                                 <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+                                 <div ng-show="loginForm.password.$touched && loginForm.password.$invalid">
+                                    <small style="color: red">Please enter your password!</small>
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <button type="submit" class="btn btn-primary btn-block" ng-click="getLoginData()">Sign in</button>
+                                 <div ng-model="incorrectLoginCredintials">{{incorrectLoginCredintials}}</div>
+                              </div>
+                           </form>
+                        </div>
+                        <div class="bottom text-center">
+                           New here ? <a href="/register"><b>Join Us</b></a>
+                        </div>
+                     </div>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+   </div>
+</nav>

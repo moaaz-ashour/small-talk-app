@@ -1,0 +1,19 @@
+<div ng-show="!logged">
+    <div ng-include src="'/views/navbar-login.html'"></div>
+</div>
+
+<div ng-show="logged">
+    <div ng-include src="'/views/navbar-user.html'"></div>
+</div>
+
+<div class="container-fluid bgcolor">
+    <div id="post-box" ng-if="posts" ng-repeat="posts in posts" class="col-md-12 col-xs-12">
+        <ul id="list">
+        <div class='panel panel-default'>
+            <li class="panel-body"><a href={{posts.url}} class='pull-left'> <h3><img src={{posts.imageurl}} height="70px"/>  {{posts.title}} </h3> </a><button class="btn btn-danger pull-right"  ng-click="deletePost(posts.id)">Remove Favorite</button></li>
+            <div class="panel-footer clearfix">
+                <li class="tagline"> <span class="score" id="{{posts.id}}_score"> Post #{{posts.id}}</span> by <a href="username={{posts.username}}">{{posts.username}}</a>
+            about <span class="label label-primary">{{posts.created_at}}</span> <span class="comments_number"><a href="/post={{posts.id}}" ng-click="getPostInfo({posts})"> <span class="badge">{{posts.total_comments}}</span> comments</a></span></div></div>
+        </ul>
+    </div>
+</div>

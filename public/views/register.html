@@ -1,0 +1,51 @@
+<div ng-show="!logged">
+   <div ng-include src="'/views/navbar-login.html'"></div>
+</div>
+
+<div class="container-fluid  bgcolor">
+   <div class="col-xs-1 col-md-3"></div>
+   <div id="submit-box" class="col-xs-10 col-md-6 centered">
+      <div class='panel panel-default'>
+         <div class="panel-body opacity">
+
+            <div class="register-header">
+               <h1>Register</h1></div>
+               <div>
+                  <input id='registerUsername' class="form-control" name='registrationUsername' type="text" placeholder="Your Name" ng-model="register.registrationUsername" ng-required="true" />
+                  <div ng-show="registerForm.registrationUsername.$touched && registerForm.registrationUsername.$invalid">
+                     <small style="color: red">Please enter a valid name!</small>
+                  </div>
+               </div>
+               <div class="divider"></div>
+               <div>
+                  <input id='registerEmail' class="form-control" name='registrationEmail' type="email" placeholder="abc.example.com" ng-model="register.registrationEmail" ng-required="true" />
+                  <div ng-show="registerForm.registrationEmail.$touched && registerForm.registrationEmail.$invalid">
+                     <small style="color: red">Please enter a valid email!</small>
+                  </div>
+               </div>
+               <div class="divider"></div>
+
+               <div>
+                  <input id='registerPassword' class="form-control" name='registrationPassword' type="password" placeholder="New Password" ng-model="register.registrationPassword" ng-required="true" />
+                  <div ng-show="registerForm.registrationPassword.$touched && registerForm.registrationPassword.$invalid">
+                     <small style="color: red">Please enter a password!</small>
+                  </div>
+               </div>
+               <div class="divider"></div>
+
+               <div>
+                  <input id='confirmPassword' class="form-control" name='confirmedPassword' type="password" placeholder="Re-enter Password" ng-model="register.confirmedPassword" ng-required="true" />
+                  <div ng-show="registerForm.confirmedPassword.$touched && registerForm.confirmedPassword.$invalid">
+                     <small style="color: red">Please confirm your password!</small>
+                  </div>
+                  <div class="divider"></div>
+
+               </div>
+               <button ng-disabled="registerForm.$invalid" class="btn btn-primary" ng-click="getRegistrationData()">Register</button>
+               <div ng-if="registerInfoRequired">Please make sure to provide all information required before submitting!</div>
+               <div ng-if="passwordsDoNotMatch">Passwords do not match!</div>
+               <div ng-model="errEmailOrPassExists">{{errEmailOrPassExists}}</div>
+            </div>
+         </form>
+      </div>
+   </div>

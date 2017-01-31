@@ -1,0 +1,63 @@
+<div ng-show="logged">
+   <div ng-include src="'/views/navbar-user.html'"></div>
+</div>
+
+<div class="container-fluid bgcolor">
+
+   <div class="col-xs-1 col-md-3"></div>
+   <div id="submit-box" ng-controller='SubmitCtrl' class="col-xs-10 col-md-6 centered">
+      <form>
+         <div class='panel panel-default'>
+
+            <div class="panel-body opacity">
+               <label for="usr">Title:</label>
+               <input id=title-submit value='' class="form-control" ng-model='title' />
+            </div>
+            <div class="panel-body">
+               <label for="pwd">URL:</label>
+               <input id=url-submit value='' class="form-control" ng-model='url' />
+            </div>
+            <div ng-show="logged">
+               <div ng-include src="'/views/navbar-user.html'"></div>
+            </div>
+
+            <div class="container-fluid bgcolor">
+
+               <div class="col-xs-1 col-md-3"></div>
+               <div id="submit-box" ng-controller='SubmitCtrl' class="col-xs-10 col-md-6 centered">
+                  <form>
+                     <div class='panel panel-default'>
+
+                        <div class="panel-body opacity">
+                           <label for="usr">Title:</label>
+                           <input id=title-submit value='' class="form-control" ng-model='title' />
+                        </div>
+                        <div class="panel-body">
+                           <label for="pwd">URL:</label>
+                           <input id=url-submit value='' class="form-control" ng-model='url' />
+                        </div>
+                        <div class='panel-footer clearfix '>
+                           Text:<br>
+                           <textarea id=text-submit ng-model='text' class="form-control"></textarea><br>
+                           <button ng-click='submit(title, url, text)' id=post-submit class="btn btn-primary">SUBMIT</button>
+                        </div>
+                     </div>
+
+                  </form>
+                  <p ng-show='submiterror' class='ng-hide'>Please complete all fields</p>
+               </div>
+               <div class="col-xs-1 col-md-3"></div>
+
+            </div>    <div class='panel-footer clearfix '>
+               Text:<br>
+               <textarea id=text-submit ng-model='text' class="form-control"></textarea><br>
+               <button ng-click='submit(title, url, text)' id=post-submit class="btn btn-primary">SUBMIT</button>
+            </div>
+         </div>
+
+      </form>
+      <p ng-show='submiterror' class='ng-hide'>Please complete all fields</p>
+   </div>
+   <div class="col-xs-1 col-md-3"></div>
+
+</div>

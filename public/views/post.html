@@ -1,0 +1,40 @@
+<div ng-show="!logged">
+   <div ng-include src="'/views/navbar-login.html'"></div>
+</div>
+
+<div ng-show="logged">
+   <div ng-include src="'/views/navbar-user.html'"></div>
+</div>
+
+
+
+<div class="container-fluid  bgcolor">
+   <div class="row">
+      <div class="col-md-12">
+         <div class='panel panel-default'>
+            <li class="panel-body">
+               <a href="{{postData[0].url}}">
+                  <h3> <img src="{{postData[0].imageurl}}" height="70px"/>  {{postData[0].title}}  </h3> </a>
+               </li>
+               <li class="panel-footer clearfix">Posted by <a href="/username={{postData[0].username}}">{{postData[0].username}} </a> | Total Comments {{postData[0].total_comments}} Posted about <span class="label label-primary">{{postData[0].created_at}}</span> </li>
+            </div>
+         </div>
+      </div>
+
+      <div class="row">
+         <div class="col-md-4 col-xs-6 col-centered" ng-show="logged">
+            <textarea ng-model="newComment" rows="4" cols="50" placeholder="Type your comment" class="form-control"> </textarea>
+            <button ng-click="submitComment()" class="btn btn-primary">Submit</button>
+         </div>
+      </div>
+
+      <div class="divider" style="margin:30px 0px"></div>
+      <h1 class="white-text">Comments</h1>
+
+
+      <div class="col-md-12">
+         <div id="display-comments"></div>
+      </div>
+   </div>
+
+</div>

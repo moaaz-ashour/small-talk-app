@@ -1,0 +1,125 @@
+body {
+   background: url('../images/background.jpg');
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   padding: 30px;
+   overflow: auto;
+}
+
+#login-dp {
+   min-width: 250px;
+   padding: 14px;
+   overflow: hidden;
+   background-color: rgba(255, 255, 255, .8);
+}
+
+#login-dp .help-block {
+   font-size: 12px
+}
+
+#login-dp .bottom {
+   background-color: rgba(255, 255, 255, .8);
+   border-top: 1px solid #ddd;
+   clear: both;
+   padding: 14px;
+}
+
+#login-dp .social-buttons {
+   margin: 13px 0
+}
+
+#login-dp .social-buttons a {
+   width: 50%;
+}
+
+#login-dp .form-group {
+   margin-bottom: 10px;
+}
+
+.fa {
+   margin-top: 3px;
+}
+
+.dropdown-menu>li>a {
+   display: block;
+   padding: 20px 20px;
+   clear: both;
+   font-weight: 400;
+   line-height: 1.42857143;
+   color: #333;
+   white-space: nowrap;
+   transition: all .25s;
+}
+
+.dropdown-menu>li>a:hover {
+   background-color: rgb(54, 54, 54);
+   font-weight: bold;
+   color: white;
+}
+
+.dropdown-menu .divider {
+   height: 1px;
+   margin: 9px 0;
+   overflow: hidden;
+}
+
+.dropdown-menu .divider {
+   height: 1px;
+   margin: 0px;
+   overflow: hidden;
+   background-color: black;
+}
+
+.btn-fb {
+   color: #fff;
+   background-color: #3b5998;
+}
+
+.btn-fb:hover {
+   color: #fff;
+   background-color: #496ebc
+}
+
+.btn-gplus {
+   color: #fff;
+   background-color: #d34836;
+}
+
+.btn-gplus:hover {
+   color: #fff;
+   background-color: #2d2d2d;
+}
+
+@media(max-width:768px) {
+   #login-dp {
+      background-color: inherit;
+      color: #fff;
+   }
+   #login-dp .bottom {
+      background-color: inherit;
+      border-top: 0 none;
+   }
+}
+
+.fa-rss {
+   margin-top: 0px;
+   background-color:
+}
+
+.bgcolor {
+   padding: 20px;
+   border-radius: 10px;
+   overflow: auto;
+   height: 100vh;
+}
+
+.panel {
+   background-color: rgba(255, 255, 255, 0.8);
+}
+
+h3 {
+   color: rgb(122, 122, 122);
+   margin-top: 0px;
+   margin-bottom: 0px;
+}
