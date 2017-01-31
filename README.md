@@ -1,4 +1,4 @@
-# Small Talk app
+# Small Talk App
 A Hacker News/ Reddit-like web app which allows for registration/ login through Facebook, commenting, liking and replying.
 
 ##Features
